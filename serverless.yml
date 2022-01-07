@@ -1,0 +1,25 @@
+service:
+  name: ["serverless-test"]
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-2
+  timeout: 30
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+        method: GET
+        path: hello
