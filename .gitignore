@@ -1,0 +1,6 @@
+# IDE SETTINGS
+.vscode/*
+
+# MODULES
+/node_modules
+/dist
